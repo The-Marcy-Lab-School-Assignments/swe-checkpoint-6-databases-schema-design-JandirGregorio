@@ -48,7 +48,34 @@ DROP TABLE IF EXISTS chefs;
 --   [ ] The association table has UNIQUE (col1, col2) on its two foreign key columns
 --   [ ] At least two columns across the schema have NOT NULL constraints
 -- ============================================================
+CREATE TABLE chefs (
+  chef_id           SERIAL      PRIMARY KEY,
+  name              TEXT        NOT NULL,
+  hometown          TEXT        NOT NULL,
+  specialty_cuisine TEXT        NOT NULL
+);
 
+CREATE TABLE recipes (
+  recipe_id         SERIAL      PRIMARY KEY,
+  title             TEXT        NOT NULL,
+  description       TEXT        NOT NULL,
+  cook_time         INT         NOT NULL,
+  chef_id           INTEGER     REFERENCES chefs (chef_id) ON DELETE CASCADE
+);
+
+CREATE TABLE ingredients (
+  ingredient_id      SERIAL     PRIMARY KEY,
+  name               TEXT       NOT NULL,
+  unit               TEXT       NOT NULL
+);
+
+CREATE TABLE recipe_ingredients (
+  recipe_ingredient_id  SERIAL  PRIMARY KEY,
+  quantity              INT     NOT NULL,
+  recipe_id             INTEGER REFERENCES recipes (recipe_id) ON DELETE CASCADE,
+  ingredient_id         INTEGER REFERENCES ingredients (ingredient_id) ON DELETE CASCADE,
+  UNIQUE (recipe_id, ingredient_id)
+);
 
 
 -- ============================================================
