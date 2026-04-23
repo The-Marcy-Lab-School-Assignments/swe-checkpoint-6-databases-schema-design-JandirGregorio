@@ -31,7 +31,10 @@ CREATE DATABASE cooking_db;
 -- Step 2: Drop tables in reverse dependency order
 -- (most dependent first, so foreign key constraints aren't violated)
 -- ============================================================
-
+DROP TABLE IF EXISTS recipe_ingredients;
+DROP TABLE IF EXISTS recipes;
+DROP TABLE IF EXISTS ingredients;
+DROP TABLE IF EXISTS chefs;
 
 
 -- ============================================================
