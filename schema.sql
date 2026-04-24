@@ -82,7 +82,52 @@ CREATE TABLE recipe_ingredients (
 -- Step 4: Seed each table with at least 3 rows of realistic data
 -- ============================================================
 
+INSERT INTO chefs (name, hometown, specialty_cuisine) VALUES
+  ('Sofia Reyes',       'Mexico City, Mexico',     'Mexican'),
+  ('James Park',        'Seoul, South Korea',      'Korean'),
+  ('Lena Bauer',        'Munich, Germany',         'German'),
+  ('Marcus Samuelsson', 'Addis Ababa, Ethiopia',   'Ethiopian');
 
+INSERT INTO recipes (title, description, cook_time, chef_id) VALUES
+  ('Garlic Pasta',    'A simple yet delicious al dente pasta tossed in garlic and olive oil.',      30,   1),
+  ('Fried Rice',      'Delicious stir-fry of rice, eggs, and soy sauce.',                           12,   2),
+  ('Tomato Soup',     'Soup prepared with seasonal Jersey Tomatoes, onion, and chicken broth.',     30,   3),
+  ('Jollof Rice',     'Exquisite and aromatic rice made with love and more ingredients.',           35,   4);
+
+INSERT INTO ingredients (name, unit) VALUES
+  ('pasta',         'ounces'), -- 1
+  ('garlic',        'cloves'), -- 2
+  ('olive oil',     'tablespoons'), -- 3
+  ('soy sauce',     'tablespoons'), -- 4
+  ('rice',          'cups'), -- 5
+  ('eggs',          'whole'), -- 6
+  ('tomatoes',      'whole'), -- 7
+  ('onion',         'whole'), -- 8
+  ('chicken broth', 'cups'), -- 9
+  ('red bell peppers', 'whole'); --10
+
+INSERT INTO recipe_ingredients (quantity, recipe_id, ingredient_id) VALUES
+  -- Garlic Pasta
+  (8, 1, 1), -- G.P. -> pasta
+  (4, 1, 2), -- G.P. -> garlic
+  (3, 1, 3), -- G.P. -> olive oil
+
+  -- Fried Rice
+  (2, 2, 5), -- F.R. -> rice
+  (2, 2, 6), -- F.R. -> eggs
+  (2, 2, 4), -- F.R. -> soy sauce
+
+  -- Tomato Soup
+  (4, 3, 7), -- T.S. -> tomatoes
+  (1, 3, 8), -- T.S. -> onion
+  (2, 3, 9), -- T.S. -> chicken broth
+  
+  -- Jollof Rice
+  (2, 4, 5), -- J.R. -> rice
+  (4, 4, 2), -- J.R. -> garlic
+  (4, 4, 7), -- J.R. -> tomatoes
+  (3, 4, 10), -- J.R. -> red bell peppers
+  (2, 4, 9); -- J.R. -> chicken broth
 
 -- ============================================================
 -- Step 5: Write queries to answer each question below
