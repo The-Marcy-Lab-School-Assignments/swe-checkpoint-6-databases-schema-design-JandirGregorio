@@ -89,12 +89,12 @@ INSERT INTO chefs (name, hometown, specialty_cuisine) VALUES
   ('Marcus Samuelsson', 'Addis Ababa, Ethiopia',   'Ethiopian');
 
 INSERT INTO recipes (title, description, cook_time, chef_id) VALUES
-  ('Garlic Pasta',    'A simple yet delicious al dente pasta tossed in garlic and olive oil.',      30,   1),
-  ('Fried Rice',      'Delicious stir-fry of rice, eggs, and soy sauce.',                           12,   2),
-  ('Tomato Soup',     'Soup prepared with seasonal Jersey Tomatoes, onion, and chicken broth.',     30,   3),
-  ('Jollof Rice',     'Exquisite and aromatic rice made with love and more ingredients.',           35,   4),
-  ('Veggie Tacos',    'Healthiest option with the best flavor of Mexican food and veggies.',        20,   1),
-  ('Shakshouka', 'Eggs poaches in a savory tomatoe sauce, peppers, and onions. Simply spectacular.',  30, 4);
+  ('Garlic Pasta',    'A simple yet delicious al dente pasta tossed in garlic and olive oil.',            30,   1),
+  ('Fried Rice',      'Delicious stir-fry of rice, eggs, and soy sauce.',                                 12,   2),
+  ('Tomato Soup',     'Soup prepared with seasonal Jersey Tomatoes, onion, and chicken broth.',           30,   3),
+  ('Jollof Rice',     'Exquisite and aromatic rice made with love and more ingredients.',                 35,   4),
+  ('Veggie Tacos',    'Healthiest option with the best flavor of Mexican food and veggies.',              20,   1),
+  ('Shakshouka',      'Eggs poached in a savory tomatoe sauce, peppers, and onions. Simply spectacular.', 30,   4);
 
 INSERT INTO ingredients (name, unit) VALUES
   ('pasta',         'ounces'), -- 1
