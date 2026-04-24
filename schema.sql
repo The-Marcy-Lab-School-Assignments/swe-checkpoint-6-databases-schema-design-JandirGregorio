@@ -92,7 +92,9 @@ INSERT INTO recipes (title, description, cook_time, chef_id) VALUES
   ('Garlic Pasta',    'A simple yet delicious al dente pasta tossed in garlic and olive oil.',      30,   1),
   ('Fried Rice',      'Delicious stir-fry of rice, eggs, and soy sauce.',                           12,   2),
   ('Tomato Soup',     'Soup prepared with seasonal Jersey Tomatoes, onion, and chicken broth.',     30,   3),
-  ('Jollof Rice',     'Exquisite and aromatic rice made with love and more ingredients.',           35,   4);
+  ('Jollof Rice',     'Exquisite and aromatic rice made with love and more ingredients.',           35,   4),
+  ('Veggie Tacos',    'Healthiest option with the best flavor of Mexican food and veggies.',        20,   1),
+  ('Shakshouka', 'Eggs poaches in a savory tomatoe sauce, peppers, and onions. Simply spectacular.',  30, 4);
 
 INSERT INTO ingredients (name, unit) VALUES
   ('pasta',         'ounces'), -- 1
@@ -104,31 +106,46 @@ INSERT INTO ingredients (name, unit) VALUES
   ('tomatoes',      'whole'), -- 7
   ('onion',         'whole'), -- 8
   ('chicken broth', 'cups'), -- 9
-  ('red bell peppers', 'whole'); --10
+  ('red bell peppers', 'whole'), --10
+  ('tortillas',     'whole'); -- 11
 
 INSERT INTO recipe_ingredients (quantity, recipe_id, ingredient_id) VALUES
   -- Garlic Pasta
-  (8, 1, 1), -- G.P. -> pasta
-  (4, 1, 2), -- G.P. -> garlic
-  (3, 1, 3), -- G.P. -> olive oil
+  (8, 1, 1), -- pasta
+  (4, 1, 2), -- garlic
+  (3, 1, 3), -- olive oil
 
   -- Fried Rice
-  (2, 2, 5), -- F.R. -> rice
-  (2, 2, 6), -- F.R. -> eggs
-  (2, 2, 4), -- F.R. -> soy sauce
+  (2, 2, 5), -- rice
+  (2, 2, 6), -- eggs
+  (2, 2, 4), -- soy sauce
 
   -- Tomato Soup
-  (4, 3, 7), -- T.S. -> tomatoes
-  (1, 3, 8), -- T.S. -> onion
-  (2, 3, 9), -- T.S. -> chicken broth
+  (4, 3, 7), -- tomatoes
+  (1, 3, 8), -- onion
+  (2, 3, 9), -- chicken broth
   
   -- Jollof Rice
-  (2, 4, 5), -- J.R. -> rice
-  (4, 4, 2), -- J.R. -> garlic
-  (4, 4, 7), -- J.R. -> tomatoes
-  (3, 4, 10), -- J.R. -> red bell peppers
-  (2, 4, 9); -- J.R. -> chicken broth
+  (2, 4, 5), -- rice
+  (4, 4, 2), -- garlic
+  (4, 4, 7), -- tomatoes
+  (3, 4, 10), -- red bell peppers
+  (2, 4, 9), -- chicken broth
 
+  -- Veggie Tacos
+  (3, 5, 11), -- tortillas
+  (1, 5, 7), -- tomatoes
+  (1, 5, 10), -- red bell peppers
+  (1, 5, 2), -- garlic
+  (2, 5, 3), -- olive oil
+
+  -- Shakshouka
+  (4, 6, 7), -- tomatoes
+  (1, 6, 10), -- red bell peppers
+  (1, 6, 8), -- onion
+  (4, 6, 6), -- eggs
+  (2, 6, 3), -- olive oil
+  (3, 6, 2); -- garlic
 -- ============================================================
 -- Step 5: Write queries to answer each question below
 -- ============================================================
